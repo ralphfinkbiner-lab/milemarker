@@ -8,14 +8,14 @@
   <meta property="og:title" content="Mile Marker — More Beach. Less Guessing." />
   <meta property="og:description" content="The OBX guide that tells you where to go, what's worth it, and what the locals already know." />
   <meta property="og:url" content="https://milemarkerobx.com" />
-
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
+ 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --navy:      #0D2E3A;
       --navy-mid:  #143344;
@@ -31,7 +31,7 @@
       --white:     #FDFAF5;
       --muted:     rgba(255,255,255,0.55);
     }
-
+ 
     html { scroll-behavior: smooth; }
     body {
       font-family: 'DM Sans', sans-serif;
@@ -39,7 +39,7 @@
       color: var(--white);
       overflow-x: hidden;
     }
-
+ 
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -74,7 +74,7 @@
       animation: fadeDown 0.8s 0.4s forwards;
       text-shadow: 0 1px 6px rgba(0,0,0,0.3);
     }
-
+ 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -86,7 +86,7 @@
       padding: 7rem 2rem 9rem;
       overflow: hidden;
     }
-
+ 
     .hero::before {
       content: '';
       position: absolute;
@@ -106,7 +106,7 @@
         );
       z-index: 0;
     }
-
+ 
     .hero-shimmer {
       position: absolute;
       top: 42%; left: 0; right: 0; bottom: 0;
@@ -117,7 +117,7 @@
       animation: shimmer 6s ease-in-out infinite alternate;
     }
     @keyframes shimmer { from { opacity: 0.6; } to { opacity: 1; } }
-
+ 
     .hero-sun {
       position: absolute;
       top: 10%; left: 50%;
@@ -134,9 +134,9 @@
       from { opacity: 0; transform: translateX(-50%) translateY(12px); }
       to   { opacity: 0.85; transform: translateX(-50%) translateY(0); }
     }
-
+ 
     .hero-horizon { display: none; }
-
+ 
     .hero-content {
       position: relative;
       z-index: 3;
@@ -144,7 +144,7 @@
       max-width: 680px;
       width: 100%;
     }
-
+ 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -166,7 +166,7 @@
       background: var(--gold-soft);
       opacity: 0.55;
     }
-
+ 
     .hero-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.6rem, 9vw, 7rem);
@@ -182,9 +182,9 @@
       font-style: italic;
       color: var(--gold-soft);
     }
-
+ 
     .hero-divider { display: none; }
-
+ 
     .hero-sub {
       font-size: clamp(0.88rem, 2vw, 1.02rem);
       font-weight: 300;
@@ -200,18 +200,18 @@
       color: var(--white);
       font-weight: 500;
     }
-
+ 
     /* ── FORM ── */
     .form-wrap {
       opacity: 0;
       animation: fadeUp 0.9s 1.2s forwards;
     }
-
+ 
     /*
     ═══════════════════════════════════════════════════
     REPLACE the .form-inner div below with your
     MailerLite embedded form code.
-
+ 
     Steps:
     1. Log into MailerLite
     2. Forms → Embedded Forms → "Mile Marker Signup"
@@ -263,14 +263,14 @@
       box-shadow: 0 4px 18px rgba(212,98,58,0.4);
     }
     .form-inner button:hover { opacity: 0.88; transform: translateY(-1px); }
-
+ 
     .form-note {
       margin-top: 0.85rem;
       font-size: 0.71rem;
       letter-spacing: 0.05em;
       color: rgba(255,255,255,0.42);
     }
-
+ 
     /* ── WAVES ── */
     .waves-wrap {
       position: absolute;
@@ -285,7 +285,7 @@
       0%, 100% { transform: translateX(0); }
       50%       { transform: translateX(-20px); }
     }
-
+ 
     /* ── FEATURES ── */
     .features {
       background: var(--sand);
@@ -314,7 +314,7 @@
       margin-right: auto;
     }
     .features-headline em { font-style: italic; color: var(--teal-deep); }
-
+ 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -347,10 +347,32 @@
       color: #4A5C68;
       font-weight: 300;
     }
-
+ 
     /* ── WAVE sand → navy ── */
     .wave-sand { background: var(--sand); line-height: 0; }
-
+ 
+    /* ── FORM SUCCESS STATES ── */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 0;
+      opacity: 0;
+      animation: fadeUp 0.6s forwards;
+    }
+    .form-success .success-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .form-success p {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .form-success strong { color: var(--gold-soft); font-weight: 500; }
+    .closing-form .form-success p { color: rgba(255,255,255,0.8); }
+ 
     /* ── CLOSING ── */
     .closing {
       background: var(--navy-mid);
@@ -364,7 +386,7 @@
       flex-direction: column;
       align-items: center;
     }
-
+ 
     /* Count */
     .closing-count {
       display: flex;
@@ -388,14 +410,14 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.45);
     }
-
+ 
     .closing-divider {
       width: 40px;
       height: 1px;
       background: linear-gradient(to right, transparent, rgba(168,220,232,0.4), transparent);
       margin-bottom: 2.2rem;
     }
-
+ 
     .closing-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -412,7 +434,7 @@
       margin-bottom: 2.4rem;
       max-width: 420px;
     }
-
+ 
     /* Closing form */
     .closing-form { width: 100%; }
     .closing-form-inner {
@@ -464,12 +486,12 @@
       letter-spacing: 0.05em;
       color: rgba(255,255,255,0.35);
     }
-
+ 
     /* Mobile closing form */
     @media (max-width: 600px) {
       .closing-form-row { flex-direction: column; }
     }
-
+ 
     /* ── FOOTER ── */
     footer {
       background: var(--navy);
@@ -496,7 +518,7 @@
       letter-spacing: 0.1em;
       color: rgba(255,255,255,0.25);
     }
-
+ 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -506,7 +528,7 @@
       from { opacity: 0; transform: translateY(-10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 1rem 1.25rem; }
@@ -519,7 +541,7 @@
   </style>
 </head>
 <body>
-
+ 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo" aria-label="Mile Marker — Home">
@@ -556,35 +578,35 @@
     </a>
     <span class="nav-tag">Coming Summer 2026</span>
   </nav>
-
+ 
   <!-- HERO -->
   <section class="hero">
-
+ 
     <div class="hero-shimmer"></div>
     <div class="hero-sun"></div>
     <div class="hero-horizon"></div>
-
+ 
     <div class="hero-content">
-
+ 
       <div class="hero-eyebrow">Outer Banks, NC</div>
-
+ 
       <h1 class="hero-headline">
         More beach.<br>
         <em>Less guessing.</em>
       </h1>
-
+ 
       <div class="hero-divider"></div>
-
+ 
       <p class="hero-sub">
         <strong>Mile Marker is the smarter way to do the Outer Banks.</strong><br>
         The OBX guide that tells you where to go, what's worth it, and what the locals already know.
       </p>
-
+ 
       <!--
       ═══════════════════════════════════════════════════
       SWAP this .form-inner block with your MailerLite
       embedded form code. Keep the .form-wrap wrapper.
-
+ 
       How to get it:
       1. Log into MailerLite
       2. Forms → Embedded Forms → "Mile Marker Signup"
@@ -593,18 +615,21 @@
       ═══════════════════════════════════════════════════
       -->
       <div class="form-wrap">
-        <div class="form-inner">
+        <form class="form-inner" id="hero-form" novalidate>
           <div class="form-row">
-            <input type="text"  placeholder="First name"    autocomplete="given-name" />
-            <input type="email" placeholder="Email address" autocomplete="email" />
+            <input type="email" id="hero-email" placeholder="Email address" autocomplete="email" required />
           </div>
-          <button type="button">Get Early Access</button>
+          <button type="submit">Get Early Access</button>
+        </form>
+        <div class="form-success" id="hero-success">
+          <span class="success-icon">🏖️</span>
+          <p>You're on the list! <strong>Welcome to Mile Marker.</strong><br>Check your inbox for a note from us.</p>
         </div>
-        <p class="form-note">No spam. Just OBX intel worth having.</p>
+        <p class="form-note" id="hero-note">No spam. Just OBX intel worth having.</p>
       </div>
-
+ 
     </div>
-
+ 
     <!-- Layered animated waves -->
     <div class="waves-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -616,9 +641,9 @@
           d="M0,88 C160,60 320,108 480,88 C640,68 800,108 960,90 C1120,72 1300,100 1440,88 L1440,120 L0,120 Z"/>
       </svg>
     </div>
-
+ 
   </section>
-
+ 
   <!-- FEATURES -->
   <section class="features">
     <div class="features-inner">
@@ -650,7 +675,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Wave: sand → founder -->
   <div class="wave-sand">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
@@ -658,22 +683,22 @@
         d="M0,30 C320,60 640,0 960,30 C1200,52 1360,18 1440,30 L1440,60 L0,60 Z"/>
     </svg>
   </div>
-
+ 
   <!-- SOCIAL PROOF + SECOND CTA -->
   <section class="closing">
     <div class="closing-inner">
-
+ 
       <!-- Momentum number -->
       <div class="closing-count">
         <span class="count-number" id="signup-count">47</span>
         <span class="count-label">OBX lovers already on the list</span>
       </div>
-
+ 
       <div class="closing-divider"></div>
-
+ 
       <p class="closing-headline">Be the first to know when it's live.</p>
       <p class="closing-sub">Early access members get first dibs, exclusive founding deals, and a direct line to shape what Mile Marker becomes.</p>
-
+ 
       <!--
       ═══════════════════════════════════════════════════
       SECOND FORM — replace .closing-form-inner with
@@ -681,19 +706,22 @@
       ═══════════════════════════════════════════════════
       -->
       <div class="closing-form">
-        <div class="closing-form-inner">
+        <form class="closing-form-inner" id="closing-form" novalidate>
           <div class="closing-form-row">
-            <input type="text"  placeholder="First name"    autocomplete="given-name" />
-            <input type="email" placeholder="Email address" autocomplete="email" />
+            <input type="email" id="closing-email" placeholder="Email address" autocomplete="email" required />
           </div>
-          <button type="button">Get Early Access</button>
+          <button type="submit">Get Early Access</button>
+        </form>
+        <div class="form-success" id="closing-success">
+          <span class="success-icon">🏖️</span>
+          <p>You're on the list! <strong>Welcome to Mile Marker.</strong><br>Check your inbox for a note from us.</p>
         </div>
-        <p class="closing-note">No spam. Just OBX intel worth having.</p>
+        <p class="closing-note" id="closing-note">No spam. Just OBX intel worth having.</p>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- FOOTER -->
   <footer>
     <a href="/" class="footer-logo" aria-label="Mile Marker">
@@ -715,6 +743,64 @@
     <span class="footer-campaign">OBX, unlocked.</span>
     <span class="footer-copy">© 2026 Mile Marker · milemarkerobx.com</span>
   </footer>
-
+ 
+  <script>
+    // ── MailerLite form submission ──
+    // Form endpoint from your MailerLite embedded form
+    const ML_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2368345/forms/188198075503740853/subscribe';
+ 
+    async function submitToMailerLite(email) {
+      const data = new FormData();
+      data.append('fields[email]', email);
+      data.append('ml-submit', '1');
+      data.append('anticsrf', 'true');
+      // mode: no-cors sends the request without reading the response
+      // (avoids CORS error while still delivering the data to MailerLite)
+      await fetch(ML_ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' });
+    }
+ 
+    function showSuccess(formEl, successEl, noteEl) {
+      formEl.style.display = 'none';
+      noteEl.style.display = 'none';
+      successEl.style.display = 'block';
+    }
+ 
+    // Hero form
+    document.getElementById('hero-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('hero-email').value.trim();
+      if (!email) return;
+      const btn = this.querySelector('button');
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+      try {
+        await submitToMailerLite(email);
+      } catch(err) { /* no-cors fetch resolves even on network issues */ }
+      showSuccess(
+        document.getElementById('hero-form'),
+        document.getElementById('hero-success'),
+        document.getElementById('hero-note')
+      );
+    });
+ 
+    // Closing form
+    document.getElementById('closing-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('closing-email').value.trim();
+      if (!email) return;
+      const btn = this.querySelector('button');
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+      try {
+        await submitToMailerLite(email);
+      } catch(err) { /* no-cors fetch resolves even on network issues */ }
+      showSuccess(
+        document.getElementById('closing-form'),
+        document.getElementById('closing-success'),
+        document.getElementById('closing-note')
+      );
+    });
+  </script>
+ 
 </body>
 </html>
